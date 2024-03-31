@@ -20,4 +20,4 @@ class PessoaResponse(PessoaBase):
     id: UUID = Field(default_factory=uuid4)
 
     class Config:
-        orm_mode = True
+        from_attributes = True

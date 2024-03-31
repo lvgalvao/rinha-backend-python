@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os
 
-SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgres/mydatabase"
+
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Cria o motor do banco de dados, é o conecta com o banco
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
