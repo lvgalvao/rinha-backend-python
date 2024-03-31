@@ -10,7 +10,7 @@ def contar_pessoas(db: Session) -> int:
     return db.query(PessoaModel).count()
 
 def criar_pessoa(db: Session, pessoa: PessoaCreate) -> PessoaModel:
-    db_pessoa = PessoaModel(**pessoa.dict())
+    db_pessoa = PessoaModel(**pessoa.model_dump())
     db.add(db_pessoa)
     db.commit()
     db.refresh(db_pessoa)

@@ -4,8 +4,8 @@ from datetime import date
 from uuid import UUID, uuid4
 
 class PessoaBase(BaseModel):
-    apelido: constr(max_length=32)
-    nome: constr(max_length=100)
+    apelido: constr(max_length=32) # type: ignore
+    nome: constr(max_length=100) # type: ignore
     nascimento: date
     stack: Optional[List[str]] = None
 
